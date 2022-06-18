@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Student Details</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+<style type="text/css">
+h1{
+        color:rgb(253, 246, 251);
+        font-weight: bold;
+        text-shadow: 4px 5px rgb(0, 0, 0);
+        text-align: center;
+        background-color:rgb(246, 50, 243);
+    }
+
+.star{
+margin:20px;
+border-left:20px solid transparent;
+border-right:20px solid transparent;
+border-bottom:30px solid rgb(255, 0, 132);
+
+}
+body
+{
+ background-image: url("https://st2.depositphotos.com/3591429/5245/i/950/depositphotos_52453251-stock-photo-computer-programming.jpg");
+}
+form{
+    font-weight: bold;
+
+ }
+ input{
+    font-weight: bold;
+
+ }
+ select{
+    font-weight: bold;
+    
+ }
+
+</style>
+
+</head>
+<body>
+<div >
+    <h1>Edit Student Details</h1>
+    </div>
+    
+    
+    <div class="border border-danger mx-auto card  bg-light mb- 3" style="max-width: 50rem;width:50rem;">
+    <div class="star">
+    
+    </div>
+    
+    
+ <form  action="#" th:action="@{/save}"  th:object=" ${student}" method="post"> 
+      
+       <div class="mx-auto" style="width: 250px;">
+      Student Id:<input class="form-control form-control-sm" type="text"  th:field="*{id}" readonly="readonly"  /> <br>
+      Student Name:<input class="form-control form-control-sm" type="text"  th:field="*{name}"  /> <br>
+      Last Name:<input class="form-control form-control-sm"  type="text"  th:field="*{lastname}"  /> <br>
+      Student Email:<input class="form-control form-control-sm" type="text"  th:field="*{email}"  /> <br>
+      Age:<input  type="number" class="form-control form-control-sm" th:field="*{age}"  /> <br>
+      Date of Birth:<input  type="text" class="form-control form-control-sm" th:field="*{dab}"  /><br>
+   Gender:<select  class="form-control form-control-sm" name="gender"   th:field="*{gender}" required id="gender">
+  <option value="gender">gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="others">Others</option>
+</select><br>
+                
+                  Phone Number:<input class="form-control form-control-sm" type="text"  th:field="*{phonenumber}"  required /> <br>
+              
+                  Father Name:<input  class="form-control form-control-sm" type="text"  th:field="*{fathername}" /> <br>
+Mother Name:<input  class="form-control form-control-sm"  type="text"  th:field="*{mother_name}"   /> <br>
+DoNo:<input class="form-control form-control-sm"  type="number"  th:field="*{dono}"  /> <br>
+Street:<input  class="form-control form-control-sm" type="text"  th:field="*{street}"  /><br>
+City<input  class="form-control form-control-sm" type="text"    th:field="*{city}"  ><br>
+ Pin Code:<input   class="form-control form-control-sm"  type="text"  th:field="*{pincode}"  /><br>
+                 
+                
+
+                 
+                 
+                  
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>
+
+ 
+ </div>
+ </form>
+ <div class="star">
+    
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+<style type="text/css">
+h1{
+        color:rgb(253, 246, 251);
+        font-weight: bold;
+        text-shadow: 4px 5px rgb(0, 0, 0);
+        text-align: center;
+        background-color:rgb(246, 50, 243);
+    }
+
+.star{
+margin:20px;
+border-left:20px solid transparent;
+border-right:20px solid transparent;
+border-bottom:30px solid rgb(255, 0, 132);
+
+}
+body
+{
+ background-image: url("https://st2.depositphotos.com/3591429/5245/i/950/depositphotos_52453251-stock-photo-computer-programming.jpg");
+}
+form{
+    font-weight: bold;
+
+ }
+ input{
+    font-weight: bold;
+
+ }
+ select{
+    font-weight: bold;
+    
+ }
+
+</style>
+
+</head>
+<body>
+<div class="text-center">
+<h1> Edit Student Join Details</h1>
+
+</div>
+
+
+<div  class="border border-danger mx-auto card  bg-light mb- 3" style="max-width: 50rem;width:50rem;">
+<form action="#" th:action="@{/savejoinstudent}"  th:object=" ${student}" method="post">
+  <div class="star">
+    
+    </div>
+                   <div class="mx-auto" style="width: 250px;">
+                Join Student Id:<input  type="text"    class="form-control form-control-sm"   th:field="*{id}" readonly="readonly"  />
+                 <br>
+               Student Enrollment Number:<input  type="text"   class="form-control form-control-sm"  th:field="*{student_enrollment}" required />
+         <br>
+                 Student Name:
+                 <input  type="text"  class="form-control form-control-sm"  th:field="*{student_name}" required/>
+         <br>    
+  
+           Email Id:
+                 <input  type="text"  class="form-control form-control-sm"  th:field="*{email}" required/>
+         <br>    
+          Phone Number:
+                 <input  type="text"  class="form-control form-control-sm"  th:field="*{phonenumer}" required/>
+         <br>    
+               
+                 Course Name:
+               <input  type="text"  class="form-control form-control-sm"  th:field="*{course_name}"  required/> 
+               <br>
+               Course Enrollment:
+                 <input  type="text"  th:field="*{course_enrollment}" class="form-control form-control-sm"  required/> 
+            <br>
+                 Bach Number:
+                 <input  type="text"  th:field="*{bach_id}"  class="form-control form-control-sm" required />
+              
+<br>            
+  
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>
+     
+
+
+</div>
+<div class="star">
+    
+    </div>
+ </form> 
+ 
+ </div>
+</body>
+</html>

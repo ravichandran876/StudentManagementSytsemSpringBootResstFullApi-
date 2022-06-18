@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" >
+<style>
+ .heade{
+    
+            background-color:  black;
+  color:#fff;
+  text-align: center;
+    }
+    
+    body{
+ background-image: url("https://image.shutterstock.com/image-vector/global-internet-network-security-digital-600w-604575887.jpg");
+ background-repeat: no-repeat;
+  background-size: cover;
+}
+#log{
+
+    font-weight: bold;
+        font-size:25px;
+}
+input{
+ font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="heade">
+<h1>Welcome to RRN institute </h1>
+
+</div>
+<br><br>
+
+
+<div   id="log" class="border border-primary  mx-auto " style="max-width: 60rem;width:60rem;">
+<div class="heade"><h2>User Sign Up Page</h2></div><br>
+<form action="#"  th:action="@{/saveuser}"  th:object="${adduserlong}" method="post">
+<div class="mx-auto" style="width: 350px;">
+Email id or User name:<input type="text" th:field="*{email}"  class="form-control form-control-sm" required>
+<br>  
+Password:<input type="password"   th:field="*{password}"  class="form-control form-control-sm" required><br>
+<br>
+First Name:<input type="text" th:field="*{firstname}"  class="form-control form-control-sm" required>
+<br>
+Last name:<input type="text" th:field="*{lastname}"  class="form-control form-control-sm" required>
+
+
+ <button type="submit" class="btn btn-primary"  onclick="myFunction()" >sign up </button>
+ </div>
+ <br>
+ 
+ 
+ 
+ <script>
+function myFunction() {
+  alert("successfully login");
+}
+</script>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
